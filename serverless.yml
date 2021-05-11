@@ -1,4 +1,4 @@
-service: harold-question-bots
+service: betty-bot
 
 package:
   exclude:
