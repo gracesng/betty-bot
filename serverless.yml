@@ -21,5 +21,5 @@ functions:
   cron:
     handler: handler.run
     events:
-      - schedule: cron(15 23 ? * SUN-THU *)
+      - schedule: cron(0 0 ? * MON,TUE,FRI *)
       # - httpApi: 'GET /handler'
