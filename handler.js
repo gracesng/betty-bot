@@ -11,11 +11,11 @@ module.exports.run = async (event, context) => {
     "U7G33RG22", // -> brunna
   ];
 
-  const U30_SLACK_CHANNEL_ID = process.env.U30_SLACK_CHANNEL_ID;
+  const TEAM_SKINCARE_AND_MAKEUP_ID = process.env.TEAM_SKINCARE_AND_MAKEUP_ID;
   const GROUP_INFO_URL = "https://slack.com/api/conversations.members";
   const USER_INFO_URL = "https://slack.com/api/users.info";
   const MAX_MEMBERS = 200; //Slack recommends no more than 200 at once -> otherwise paginate
-  const U30_WEBHOOK_URL = process.env.U30_WEBHOOK_URL;
+  const TEAM_SKINCARE_AND_MAKEUP_WEBHOOK_URL = process.env.TEAM_SKINCARE_AND_MAKEUP_WEBHOOK_URL;
   const OAUTH_TOKEN = process.env.OAUTH_TOKEN;
   const QUESTIONS_FILE = "questions.txt";
 
@@ -24,7 +24,7 @@ module.exports.run = async (event, context) => {
       headers: { authorization: `Bearer ${OAUTH_TOKEN}` },
     };
     const params = querystring.stringify({
-      channel: U30_SLACK_CHANNEL_ID,
+      channel: TEAM_SKINCARE_AND_MAKEUP_ID,
       limit: MAX_MEMBERS,
       ...(cursor && { cursor }),
     });
@@ -97,7 +97,7 @@ module.exports.run = async (event, context) => {
 
   const sendQuestion = async ({ question, member }) => {
     const text = `<@${member}>: ${question}`;
-    await axios.post(U30_WEBHOOK_URL, { text }).catch((err) => {
+    await axios.post(TEAM_SKINCARE_AND_MAKEUP_WEBHOOK_URL, { text }).catch((err) => {
       console.error("Failed to send question to Slack U30 Channel", err);
       throw err;
     });
