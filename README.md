@@ -5,7 +5,7 @@ layout: Doc
 
 # betty-bot
 
-A simple slack bot which will ask a random member of the #under30s channel a random question
+A simple slack bot which will ask a random member of the #team-skincare-and-makeup channel a random question
 
 ## Cron Schedule
 Runs Monday, Wednesday, Friday at 11am AEDT
@@ -13,7 +13,7 @@ Runs Monday, Wednesday, Friday at 11am AEDT
 ## About
 Project is deployed using the serverless framework.
 
-Betty runs as a nodeJS Lambda which is triggered on a Cron Schedule. He uses the `groups.info` Slack API to retrieve a list of user's for a channel and then sends a question to the channel via a webhook. You can access Betty's slack integration options from here: https://api.slack.com/apps/A020HRG9CRY If you do not have access PM @sean on Slack to be added as a contributor.
+Betty runs as a nodeJS Lambda which is triggered on a Cron Schedule. She uses the `groups.info` Slack API to retrieve a list of user's for a channel and then sends a question to the channel via a webhook. You can access Betty's slack integration options from here: https://api.slack.com/apps/A020HRG9CRY If you do not have access PM @sean on Slack to be added as a contributor.
 
 The list of questions is provided as a separate text file resource to the main application logic.
 
