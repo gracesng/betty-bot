@@ -8,7 +8,7 @@ layout: Doc
 A simple slack bot which will ask a random member of the #under30s channel a random question
 
 ## Cron Schedule
-Runs Monday to Friday at 10.15am AEDT
+Runs Monday, Wednesday, Friday at 11am AEDT
 
 ## About
 Project is deployed using the serverless framework.
@@ -43,9 +43,9 @@ Create an .env file with the following content:
 ```
 OAUTH_TOKEN=X
 ENVIRONMENT=prod
-U30_SLACK_CHANNEL_ID=X
-U30_WEBHOOK_URL=X
+TEAM_SKINCARE_AND_MAKEUP_ID=X
+TEAM_SKINCARE_AND_MAKEUP_WEBHOOK_URL=X
 ```
 
 ## Notes
-TOKEN constant is the Oauth token
+TOKEN constant is the Oauth token from Slack
